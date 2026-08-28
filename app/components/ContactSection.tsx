@@ -55,7 +55,7 @@ export function ContactSection() {
             </a>
             <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
               <span className="mono">LINKEDIN</span>
-              ganesh-a-8a9b992ab ↗
+              ganesh-software-developer ↗
             </a>
             <a
               href={`mailto:${siteConfig.email}?subject=Resume%20request%20for%20Ganesh%20A`}

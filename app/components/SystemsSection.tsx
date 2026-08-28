@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { SkillGroup } from "../types/portfolio";
 
@@ -30,23 +31,51 @@ export function SystemsSection({ skillGroups }: SystemsSectionProps) {
           ))}
         </div>
         <div className="about-block reveal">
-          <p className="mono">ABOUT / GANESH A.</p>
-          <blockquote>
-            “I care about the screen people see—and the engineering they never
-            have to think about.”
-          </blockquote>
-          <div>
-            <p>
-              Software developer from Tamil Nadu, India, building modern web and
-              mobile products across interface, server, data and delivery.
-            </p>
-            <p>
-              Currently focused on joining a product-minded team where I can
-              solve real problems, learn fast and ship reliable software.
-            </p>
+          <div className="about-photo-col">
+            <div className="about-photo-frame">
+              <div className="photo-corner photo-corner-tl" />
+              <div className="photo-corner photo-corner-tr" />
+              <div className="photo-corner photo-corner-bl" />
+              <div className="photo-corner photo-corner-br" />
+              <div className="photo-hud-tag mono">
+                <span>DEV // GA-01</span>
+                <i />
+              </div>
+              <Image
+                src="/ganesh.jpg"
+                alt="Ganesh A. - Software Developer"
+                width={380}
+                height={380}
+                className="about-portrait"
+                priority
+              />
+              <div className="photo-overlay" />
+            </div>
+            <div className="photo-caption mono">
+              <span>GANESH A.</span>
+              <span>10.3673° N / 77.9803° E</span>
+            </div>
+          </div>
+          <div className="about-text-col">
+            <p className="eyebrow mono">ABOUT / GANESH A.</p>
+            <blockquote>
+              “I care about the screen people see—and the engineering they never
+              have to think about.”
+            </blockquote>
+            <div className="about-details">
+              <p>
+                Software developer from Tamil Nadu, India, building modern web and
+                mobile products across interface, server, data and delivery.
+              </p>
+              <p>
+                Currently focused on joining a product-minded team where I can
+                solve real problems, learn fast and ship reliable software.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

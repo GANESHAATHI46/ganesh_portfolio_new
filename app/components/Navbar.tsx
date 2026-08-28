@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
@@ -10,6 +11,16 @@ export function Navbar() {
   return (
     <header className="nav-shell">
       <a className="wordmark" href="#top" aria-label="Ganesh A. portfolio home">
+        <div className="nav-avatar-wrap">
+          <Image
+            src="/ganesh.jpg"
+            alt="Ganesh A."
+            width={28}
+            height={28}
+            className="nav-avatar-img"
+            priority
+          />
+        </div>
         <strong>GA</strong>
         <span>
           SOFTWARE
@@ -17,6 +28,7 @@ export function Navbar() {
           DEVELOPER
         </span>
       </a>
+
 
       <nav
         className={menuOpen ? "main-nav open" : "main-nav"}

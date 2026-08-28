@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "../data/siteConfig";
 
 export function Hero() {
@@ -5,7 +6,19 @@ export function Hero() {
     <section className="opening" aria-labelledby="opening-title">
       <div className="opening-stars" aria-hidden="true" />
       <div className="opening-meta mono">
-        <span>GANESH A. / PORTFOLIO 2026</span>
+        <div className="hero-identity">
+          <div className="hero-avatar-ring">
+            <Image
+              src="/ganesh.jpg"
+              alt="Ganesh A."
+              width={26}
+              height={26}
+              className="hero-avatar-img"
+              priority
+            />
+          </div>
+          <span>GANESH A. / PORTFOLIO 2026</span>
+        </div>
         <span>{siteConfig.coordinates}</span>
       </div>
       <h1 id="opening-title">
@@ -27,3 +40,4 @@ export function Hero() {
     </section>
   );
 }
+

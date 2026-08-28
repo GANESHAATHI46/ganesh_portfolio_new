@@ -11,6 +11,6 @@ export const siteConfig: SiteConfig = {
   coordinates: "10.3673° N / 77.9803° E",
   email: "ganeshaathi46@gmail.com",
   phone: "+91 78719 74080",
-  linkedin: "https://www.linkedin.com/in/ganesh-a-8a9b992ab",
-  siteUrl: "https://ganesh-portfolio.dev",
+  linkedin: "https://www.linkedin.com/in/ganesh-software-developer/",
+  siteUrl: "https://www.ganeshdeveloper.in/",
 };

@@ -39,9 +39,10 @@ export function ProjectDialog({
             <span>SYS / {project.number}</span>
             <span>{project.status}</span>
           </div>
-          <p className="dialog-type mono">
-            {project.type} · {project.period}
-          </p>
+          <div className="dialog-kicker-wrap">
+            <p className="dialog-type mono">{project.type}</p>
+            <span className="dialog-period mono">TIMELINE // {project.period}</span>
+          </div>
           <h2 id="project-dialog-title">{project.title}</h2>
           <div className="dialog-stack stack">
             {project.stack.map((item) => (
