@@ -1,16 +1,32 @@
-import type { CSSProperties } from "react";
+"use client";
+
+import { type CSSProperties, useRef, useState } from "react";
 import type { Project } from "../types/portfolio";
 import { ArrowIcon } from "./icons/ArrowIcon";
+import { ProjectDialog } from "./ProjectDialog";
 
 interface ProjectsSectionProps {
   projects: Project[];
-  onOpenProject: (project: Project, trigger: HTMLButtonElement) => void;
 }
 
-export function ProjectsSection({
-  projects,
-  onOpenProject,
-}: ProjectsSectionProps) {
+export function ProjectsSection({ projects }: ProjectsSectionProps) {
+  const projectDialogRef = useRef<HTMLDialogElement>(null);
+  const projectTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const openProject = (project: Project, trigger: HTMLButtonElement) => {
+    projectTriggerRef.current = trigger;
+    setSelectedProject(project);
+    requestAnimationFrame(() => projectDialogRef.current?.showModal());
+  };
+
+  const closeProject = () => projectDialogRef.current?.close();
+
+  const handleProjectClosed = () => {
+    setSelectedProject(null);
+    projectTriggerRef.current?.focus();
+  };
+
   return (
     <section className="projects section" id="projects" aria-label="Projects">
       <div className="section-shell">
@@ -34,7 +50,7 @@ export function ProjectsSection({
               key={project.title}
               type="button"
               aria-haspopup="dialog"
-              onClick={(event) => onOpenProject(project, event.currentTarget)}
+              onClick={(event) => openProject(project, event.currentTarget)}
               style={{ "--delay": `${index * 80}ms` } as CSSProperties}
             >
               <div className="project-index mono">SYS / {project.number}</div>
@@ -65,6 +81,13 @@ export function ProjectsSection({
           ))}
         </div>
       </div>
+      <ProjectDialog
+        dialogRef={projectDialogRef}
+        project={selectedProject}
+        onClose={closeProject}
+        onClosed={handleProjectClosed}
+      />
     </section>
   );
 }
+

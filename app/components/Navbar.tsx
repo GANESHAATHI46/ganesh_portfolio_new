@@ -10,15 +10,20 @@ export function Navbar() {
 
   return (
     <header className="nav-shell">
-      <a className="wordmark" href="#top" aria-label="Ganesh A. portfolio home">
+      <a
+        className="wordmark"
+        href="#top"
+        aria-label="GA Software Developer — Ganesh A. portfolio home"
+      >
         <div className="nav-avatar-wrap">
           <Image
-            src="/ganesh.jpg"
+            src="/avatar.webp"
             alt="Ganesh - Software Developer"
             width={28}
             height={28}
             className="nav-avatar-img"
             priority
+            fetchPriority="high"
           />
         </div>
         <strong>GA</strong>

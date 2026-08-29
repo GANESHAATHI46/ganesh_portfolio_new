@@ -17,14 +17,14 @@ function windowFade(
 }
 
 interface UseScrollTelemetryProps {
-  missionRef: RefObject<HTMLElement | null>;
-  burstRef: RefObject<HTMLElement | null>;
+  missionRef?: RefObject<HTMLElement | null>;
+  burstRef?: RefObject<HTMLElement | null>;
 }
 
 export function useScrollTelemetry({
   missionRef,
   burstRef,
-}: UseScrollTelemetryProps) {
+}: UseScrollTelemetryProps = {}) {
   useEffect(() => {
     const root = document.documentElement;
     let raf = 0;
@@ -37,8 +37,15 @@ export function useScrollTelemetry({
 
     const render = () => {
       raf = 0;
-      const mission = progressFor(missionRef.current);
-      const burst = progressFor(burstRef.current);
+      const missionEl =
+        missionRef?.current || document.getElementById("mission");
+      const burstEl =
+        burstRef?.current ||
+        document.getElementById("burst") ||
+        document.querySelector<HTMLElement>(".burst-story");
+
+      const mission = progressFor(missionEl);
+      const burst = progressFor(burstEl);
       const maxScroll =
         document.documentElement.scrollHeight - window.innerHeight;
 
@@ -101,3 +108,4 @@ export function useScrollTelemetry({
     };
   }, [missionRef, burstRef]);
 }
+

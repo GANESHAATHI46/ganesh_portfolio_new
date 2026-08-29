@@ -234,7 +234,7 @@ svg { width: 1em; height: 1em; }
 .form-footer button { min-height: 52px; padding: 0 20px; display: inline-flex; align-items: center; gap: 15px; border: 0; color: #000; background: var(--paper); font-size: 12px; font-weight: 700; cursor: pointer; transition: transform .25s ease, background .25s ease; }
 .form-footer button:hover { transform: translateY(-3px); background: white; }
 .form-footer > span { color: #686660; font-size: 6px; text-align: right; }
-footer { min-height: 90px; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); color: #63625e; font: 7px "Courier New", monospace; letter-spacing: .14em; text-transform: uppercase; }
+footer { min-height: 90px; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); color: #8e8d88; font: 7px "Courier New", monospace; letter-spacing: .14em; text-transform: uppercase; }
 
 .reveal { opacity: 0; transform: translateY(35px); transition: opacity .85s ease var(--delay, 0ms), transform .85s cubic-bezier(.2,.7,.2,1) var(--delay, 0ms); }.reveal.visible { opacity: 1; transform: translateY(0); }
 @keyframes drop { 0%,100% { transform: translateY(-3px); } 50% { transform: translateY(5px); } }

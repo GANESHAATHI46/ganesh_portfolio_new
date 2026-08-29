@@ -42,12 +42,13 @@ export function SystemsSection({ skillGroups }: SystemsSectionProps) {
                 <i />
               </div>
               <Image
-                src="/ganesh.jpg"
+                src="/ganesh.webp"
                 alt="Ganesh - Software Developer"
                 width={380}
                 height={380}
                 className="about-portrait"
-                priority
+                loading="lazy"
+                decoding="async"
               />
               <div className="photo-overlay" />
             </div>

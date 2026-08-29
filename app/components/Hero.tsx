@@ -9,12 +9,13 @@ export function Hero() {
         <div className="hero-identity">
           <div className="hero-avatar-ring">
             <Image
-              src="/ganesh.jpg"
+              src="/avatar.webp"
               alt="Ganesh - Software Developer"
               width={26}
               height={26}
               className="hero-avatar-img"
               priority
+              fetchPriority="high"
             />
           </div>
           <span>GANESH A. / PORTFOLIO 2026</span>

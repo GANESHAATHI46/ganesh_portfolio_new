@@ -1,10 +1,10 @@
 import type { RefObject } from "react";
 
 interface MissionJourneyProps {
-  missionRef: RefObject<HTMLElement | null>;
+  missionRef?: RefObject<HTMLElement | null>;
 }
 
-export function MissionJourney({ missionRef }: MissionJourneyProps) {
+export function MissionJourney({ missionRef }: MissionJourneyProps = {}) {
   return (
     <section
       className="mission"
@@ -19,6 +19,10 @@ export function MissionJourney({ missionRef }: MissionJourneyProps) {
           className="mission-craft"
           src="/rocket.webp"
           alt="An original spacecraft travelling through deep space"
+          width={1672}
+          height={941}
+          loading="lazy"
+          decoding="async"
         />
         <div className="engine-trail" aria-hidden="true" />
 
