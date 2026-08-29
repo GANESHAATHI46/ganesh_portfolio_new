@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { siteConfig } from "./data/siteConfig";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -127,8 +126,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
+        <meta name="theme-color" content="#F3F1EB" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('ganesh-portfolio-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}else{document.documentElement.setAttribute('data-theme','light');document.documentElement.style.colorScheme='light';}}catch(e){document.documentElement.setAttribute('data-theme','light');document.documentElement.style.colorScheme='light';}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

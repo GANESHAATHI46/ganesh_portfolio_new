@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,7 +35,6 @@ export function Navbar() {
         </span>
       </a>
 
-
       <nav
         className={menuOpen ? "main-nav open" : "main-nav"}
         aria-label="Main navigation"
@@ -56,8 +56,11 @@ export function Navbar() {
         </a>
       </nav>
 
-      <div className="nav-status">
-        <i /> Seeking developer roles
+      <div className="nav-right">
+        <ThemeToggle />
+        <div className="nav-status">
+          <i /> Seeking developer roles
+        </div>
       </div>
 
       <button
@@ -73,3 +76,4 @@ export function Navbar() {
     </header>
   );
 }
+

@@ -15,8 +15,16 @@ export function MissionJourney({ missionRef }: MissionJourneyProps = {}) {
       <div className="mission-sticky">
         <div className="starfield stars-near" aria-hidden="true" />
         <div className="starfield stars-far" aria-hidden="true" />
+
+        <div className="orbital-diagram" aria-hidden="true">
+          <div className="orbit-ring orbit-ring-outer" />
+          <div className="orbit-ring orbit-ring-inner" />
+          <div className="orbit-planet" />
+          <div className="orbit-marker" />
+        </div>
+
         <img
-          className="mission-craft"
+          className="mission-craft mission-craft-dark"
           src="/rocket.webp"
           alt="An original spacecraft travelling through deep space"
           width={1672}
@@ -24,6 +32,16 @@ export function MissionJourney({ missionRef }: MissionJourneyProps = {}) {
           loading="lazy"
           decoding="async"
         />
+        <img
+          className="mission-craft mission-craft-light"
+          src="/rocket-transparent.webp"
+          alt="An original spacecraft travelling through deep space"
+          width={1672}
+          height={941}
+          loading="lazy"
+          decoding="async"
+        />
+
         <div className="engine-trail" aria-hidden="true" />
 
         <div className="mission-hud mono">
