@@ -30,7 +30,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="contact" id="contact">
+    <section className="contact" id="contact" aria-label="Contact">
       <div className="contact-stars" aria-hidden="true" />
       <div className="contact-content">
         <div className="contact-copy reveal">

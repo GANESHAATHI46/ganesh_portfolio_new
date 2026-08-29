@@ -10,7 +10,7 @@ export function Hero() {
           <div className="hero-avatar-ring">
             <Image
               src="/ganesh.jpg"
-              alt="Ganesh A."
+              alt="Ganesh - Software Developer"
               width={26}
               height={26}
               className="hero-avatar-img"
@@ -22,6 +22,7 @@ export function Hero() {
         <span>{siteConfig.coordinates}</span>
       </div>
       <h1 id="opening-title">
+        <span className="sr-only">Ganesh — Software Developer</span>
         <span>ENGINEER</span>
         <span className="outline">FOR THE</span>
         <span>UNKNOWN.</span>

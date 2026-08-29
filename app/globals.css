@@ -56,7 +56,7 @@ svg { width: 1em; height: 1em; }
 .hero-avatar-img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 .opening h1 { position: relative; z-index: 2; margin: 8vh 0 5vh; font-size: clamp(78px, 13.1vw, 224px); line-height: .74; letter-spacing: -.085em; font-weight: 800; }
 .opening h1 span { display: block; white-space: nowrap; }
-.opening h1 span:nth-child(2) { margin-left: 12vw; }
+.opening h1 span.outline { margin-left: 12vw; }
 .opening h1 .outline { color: transparent; -webkit-text-stroke: 1px rgba(244,241,233,.58); }
 .opening-bottom { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: end; }
 .opening-bottom p { max-width: 470px; margin: 0; color: #aaa9a4; font-size: 13px; line-height: 1.7; }

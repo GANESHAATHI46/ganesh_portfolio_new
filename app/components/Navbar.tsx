@@ -14,7 +14,7 @@ export function Navbar() {
         <div className="nav-avatar-wrap">
           <Image
             src="/ganesh.jpg"
-            alt="Ganesh A."
+            alt="Ganesh - Software Developer"
             width={28}
             height={28}
             className="nav-avatar-img"
@@ -34,14 +34,14 @@ export function Navbar() {
         className={menuOpen ? "main-nav open" : "main-nav"}
         aria-label="Main navigation"
       >
-        <a href="#mission" onClick={closeMenu}>
-          Mission
+        <a href="#about" onClick={closeMenu}>
+          About
         </a>
-        <a href="#work" onClick={closeMenu}>
-          Work
+        <a href="#skills" onClick={closeMenu}>
+          Skills
         </a>
-        <a href="#systems" onClick={closeMenu}>
-          Systems
+        <a href="#projects" onClick={closeMenu}>
+          Projects
         </a>
         <a href="#education" onClick={closeMenu}>
           Education

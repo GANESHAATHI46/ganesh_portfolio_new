@@ -8,13 +8,13 @@ interface SystemsSectionProps {
 
 export function SystemsSection({ skillGroups }: SystemsSectionProps) {
   return (
-    <section className="systems section" id="systems">
+    <section className="systems section" id="skills" aria-label="Skills and About">
       <div className="section-shell">
         <div className="systems-head reveal">
           <p className="eyebrow mono">OPERATIONAL RANGE</p>
           <h2>
-            Systems I<br />
-            <span>operate.</span>
+            Skills &amp;<br />
+            <span>Systems.</span>
           </h2>
         </div>
         <div className="skills-list">
@@ -30,7 +30,7 @@ export function SystemsSection({ skillGroups }: SystemsSectionProps) {
             </article>
           ))}
         </div>
-        <div className="about-block reveal">
+        <div className="about-block reveal" id="about">
           <div className="about-photo-col">
             <div className="about-photo-frame">
               <div className="photo-corner photo-corner-tl" />
@@ -43,7 +43,7 @@ export function SystemsSection({ skillGroups }: SystemsSectionProps) {
               </div>
               <Image
                 src="/ganesh.jpg"
-                alt="Ganesh A. - Software Developer"
+                alt="Ganesh - Software Developer"
                 width={380}
                 height={380}
                 className="about-portrait"
@@ -58,6 +58,7 @@ export function SystemsSection({ skillGroups }: SystemsSectionProps) {
           </div>
           <div className="about-text-col">
             <p className="eyebrow mono">ABOUT / GANESH A.</p>
+            <h2 className="sr-only">About Ganesh</h2>
             <blockquote>
               “I care about the screen people see—and the engineering they never
               have to think about.”

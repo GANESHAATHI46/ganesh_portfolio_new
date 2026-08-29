@@ -12,7 +12,7 @@ export function ProjectsSection({
   onOpenProject,
 }: ProjectsSectionProps) {
   return (
-    <section className="projects section" id="work">
+    <section className="projects section" id="projects" aria-label="Projects">
       <div className="section-shell">
         <div className="section-intro reveal">
           <p className="eyebrow mono">SELECTED SYSTEMS / 05</p>

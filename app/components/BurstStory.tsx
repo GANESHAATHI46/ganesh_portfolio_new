@@ -24,10 +24,10 @@ export function BurstStory({ burstRef }: BurstStoryProps) {
           ENERGY / PRODUCT IMPACT
         </p>
         <div className="burst-copy">
-          <h2 className="burst-line burst-0">A SMALL IDEA</h2>
-          <h2 className="burst-line burst-1">BUILDS PRESSURE</h2>
-          <h2 className="burst-line burst-2">BECOMES A SYSTEM</h2>
-          <h2 className="burst-line burst-3">CREATES IMPACT.</h2>
+          <p className="burst-line burst-0">A SMALL IDEA</p>
+          <p className="burst-line burst-1">BUILDS PRESSURE</p>
+          <p className="burst-line burst-2">BECOMES A SYSTEM</p>
+          <p className="burst-line burst-3">CREATES IMPACT.</p>
         </div>
         <div className="burst-scale mono">
           <span>

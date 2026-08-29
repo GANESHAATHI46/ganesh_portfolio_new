@@ -17,7 +17,7 @@ export function CareerSection({
   credentials,
 }: CareerSectionProps) {
   return (
-    <section className="career section" id="education">
+    <section className="career section" id="education" aria-label="Education and Experience">
       <div className="section-shell">
         <div className="career-head reveal">
           <p className="eyebrow mono">GROUND CONTROL / FORMATION</p>
