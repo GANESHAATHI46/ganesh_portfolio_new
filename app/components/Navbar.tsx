@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -11,15 +12,15 @@ export function Navbar() {
 
   return (
     <header className="nav-shell">
-      <a
+      <Link
         className="wordmark"
-        href="#top"
-        aria-label="GA Software Developer — Ganesh A. portfolio home"
+        href="/#top"
+        aria-label="Ganesh A — Full Stack Developer Portfolio"
       >
         <div className="nav-avatar-wrap">
           <Image
             src="/avatar.webp"
-            alt="Ganesh - Software Developer"
+            alt="Ganesh A — Full Stack Developer"
             width={28}
             height={28}
             className="nav-avatar-img"
@@ -29,31 +30,31 @@ export function Navbar() {
         </div>
         <strong>GA</strong>
         <span>
-          SOFTWARE
+          FULL STACK
           <br />
           DEVELOPER
         </span>
-      </a>
+      </Link>
 
       <nav
         className={menuOpen ? "main-nav open" : "main-nav"}
         aria-label="Main navigation"
       >
-        <a href="#about" onClick={closeMenu}>
+        <Link href="/#about" onClick={closeMenu}>
           About
-        </a>
-        <a href="#skills" onClick={closeMenu}>
+        </Link>
+        <Link href="/#skills" onClick={closeMenu}>
           Skills
-        </a>
-        <a href="#projects" onClick={closeMenu}>
+        </Link>
+        <Link href="/#projects" onClick={closeMenu}>
           Projects
-        </a>
-        <a href="#education" onClick={closeMenu}>
+        </Link>
+        <Link href="/#education" onClick={closeMenu}>
           Education
-        </a>
-        <a href="#contact" onClick={closeMenu}>
+        </Link>
+        <Link href="/#contact" onClick={closeMenu}>
           Contact
-        </a>
+        </Link>
       </nav>
 
       <div className="nav-right">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { RefObject } from "react";
 
 interface BurstStoryProps {
@@ -13,14 +14,13 @@ export function BurstStory({ burstRef }: BurstStoryProps = {}) {
       aria-label="A scroll-controlled energy burst representing product impact"
     >
       <div className="burst-sticky">
-        <img
+        <Image
           className="burst-image"
           src="/burst.webp"
           alt="An abstract scientific energy wave expanding through darkness"
           width={1672}
           height={941}
           loading="lazy"
-          decoding="async"
         />
         <div className="burst-vignette" aria-hidden="true" />
         <p className="burst-code mono">

@@ -4,16 +4,19 @@ function clamp(value: number, min = 0, max = 1) {
   return Math.min(max, Math.max(min, value));
 }
 
-function windowFade(
+function stageFade(
   progress: number,
-  start: number,
-  end: number,
-  feather = 0.09,
+  startFadeIn: number,
+  peakStart: number,
+  peakEnd: number,
+  endFadeOut: number,
 ) {
-  return Math.min(
-    clamp((progress - start) / feather),
-    clamp((end - progress) / feather),
-  );
+  if (progress <= startFadeIn || progress >= endFadeOut) return 0;
+  if (progress >= peakStart && progress <= peakEnd) return 1;
+  if (progress < peakStart) {
+    return clamp((progress - startFadeIn) / Math.max(0.001, peakStart - startFadeIn));
+  }
+  return clamp((endFadeOut - progress) / Math.max(0.001, endFadeOut - peakEnd));
 }
 
 interface UseScrollTelemetryProps {
@@ -38,7 +41,9 @@ export function useScrollTelemetry({
     const render = () => {
       raf = 0;
       const missionEl =
-        missionRef?.current || document.getElementById("mission");
+        missionRef?.current ||
+        document.getElementById("mission") ||
+        document.getElementById("system-core");
       const burstEl =
         burstRef?.current ||
         document.getElementById("burst") ||
@@ -54,30 +59,41 @@ export function useScrollTelemetry({
         String(maxScroll > 0 ? window.scrollY / maxScroll : 0),
       );
       root.style.setProperty("--mission", mission.toFixed(4));
+      root.style.setProperty("--system-progress", mission.toFixed(4));
       root.style.setProperty("--burst", burst.toFixed(4));
 
-      [
-        [0, -0.09, 0.25],
-        [1, 0.18, 0.51],
-        [2, 0.44, 0.77],
-        [3, 0.7, 1.1],
-      ].forEach(([index, start, end]) => {
-        root.style.setProperty(
-          `--beat-${index}`,
-          windowFade(mission, start, end).toFixed(3),
-        );
+      // Calculate active stage (0..3) with retuned dwell thresholds
+      let activeStage = 0;
+      if (mission >= 0.76) activeStage = 3;
+      else if (mission >= 0.50) activeStage = 2;
+      else if (mission >= 0.24) activeStage = 1;
+      root.style.setProperty("--active-stage", String(activeStage));
+
+      // Retuned generous dwell windows for compacted scroll heights (Beat 0..3)
+      const stageWindows: [number, number, number, number][] = [
+        [-0.06, 0.00, 0.18, 0.24],
+        [0.25, 0.29, 0.45, 0.50],
+        [0.51, 0.55, 0.71, 0.76],
+        [0.77, 0.81, 1.00, 1.08],
+      ];
+
+      stageWindows.forEach(([startIn, peakIn, peakOut, endOut], index) => {
+        const value = stageFade(mission, startIn, peakIn, peakOut, endOut);
+        root.style.setProperty(`--beat-${index}`, value.toFixed(3));
+        root.style.setProperty(`--stage-${index}`, value.toFixed(3));
       });
 
-      [
-        [0, -0.09, 0.29],
-        [1, 0.2, 0.54],
-        [2, 0.46, 0.79],
-        [3, 0.71, 1.1],
-      ].forEach(([index, start, end]) => {
-        root.style.setProperty(
-          `--burst-${index}`,
-          windowFade(burst, start, end).toFixed(3),
-        );
+      // Retuned burst line windows for "A SMALL IDEA"
+      const burstWindows: [number, number, number, number][] = [
+        [-0.06, 0.00, 0.18, 0.24],
+        [0.25, 0.29, 0.45, 0.50],
+        [0.51, 0.55, 0.71, 0.76],
+        [0.77, 0.81, 1.00, 1.08],
+      ];
+
+      burstWindows.forEach(([startIn, peakIn, peakOut, endOut], index) => {
+        const value = stageFade(burst, startIn, peakIn, peakOut, endOut);
+        root.style.setProperty(`--burst-${index}`, value.toFixed(3));
       });
     };
 

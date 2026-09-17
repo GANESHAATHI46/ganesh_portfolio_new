@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { SkillGroup } from "../types/portfolio";
 
@@ -43,7 +44,7 @@ export function SystemsSection({ skillGroups }: SystemsSectionProps) {
               </div>
               <Image
                 src="/ganesh.webp"
-                alt="Ganesh - Software Developer"
+                alt="Ganesh A — Full Stack Developer in Dindigul, Tamil Nadu"
                 width={380}
                 height={380}
                 className="about-portrait"
@@ -53,26 +54,45 @@ export function SystemsSection({ skillGroups }: SystemsSectionProps) {
               <div className="photo-overlay" />
             </div>
             <div className="photo-caption mono">
-              <span>GANESH A.</span>
+              <span>GANESH A</span>
               <span>10.3673° N / 77.9803° E</span>
             </div>
           </div>
           <div className="about-text-col">
             <p className="eyebrow mono">ABOUT / GANESH A.</p>
-            <h2 className="sr-only">About Ganesh</h2>
+            <h2 className="sr-only">About Ganesh A — Full Stack Developer in Dindigul</h2>
             <blockquote>
               “I care about the screen people see—and the engineering they never
               have to think about.”
             </blockquote>
             <div className="about-details">
               <p>
-                Software developer from Tamil Nadu, India, building modern web and
-                mobile products across interface, server, data and delivery.
+                Ganesh A is a Full Stack Developer based in Dindigul, Tamil Nadu,
+                building modern web and mobile products across interface, server,
+                data and production delivery.
               </p>
-              <p>
-                Currently focused on joining a product-minded team where I can
-                solve real problems, learn fast and ship reliable software.
-              </p>
+              <div>
+                <p>
+                  Specializing in React, React Native, Python, Django, FastAPI,
+                  PostgreSQL and automation tools to deliver robust, high-performance
+                  software.
+                </p>
+                <p style={{ marginTop: "14px" }}>
+                  <Link
+                    href="/about"
+                    className="mono"
+                    style={{
+                      color: "var(--amber)",
+                      fontWeight: 700,
+                      letterSpacing: ".08em",
+                      textDecoration: "underline",
+                      fontSize: "12px",
+                    }}
+                  >
+                    READ FULL PROFILE &amp; PUBLIC PROFILES →
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>

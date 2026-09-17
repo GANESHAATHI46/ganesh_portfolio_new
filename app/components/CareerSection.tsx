@@ -20,7 +20,7 @@ export function CareerSection({
     <section className="career section" id="education" aria-label="Education and Experience">
       <div className="section-shell">
         <div className="career-head reveal">
-          <p className="eyebrow mono">GROUND CONTROL / FORMATION</p>
+          <p className="eyebrow mono">ENGINEERING FOUNDATION / TIMELINE</p>
           <h2>
             Education &amp;
             <br />

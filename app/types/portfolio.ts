@@ -51,9 +51,15 @@ export interface SiteConfig {
   tagline: string;
   description: string;
   location: string;
+  locality: string;
+  region: string;
+  country: string;
   coordinates: string;
   email: string;
   phone: string;
   linkedin: string;
+  github: string;
+  instagram: string;
   siteUrl: string;
+  alternateNames: string[];
 }

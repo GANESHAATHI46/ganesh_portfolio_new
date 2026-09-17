@@ -3,9 +3,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ganeshdeveloper.in/"),
-  title: "Ganesh | Software Developer Portfolio",
+  title: {
+    default: "Ganesh A | Full Stack Developer in Dindigul",
+    template: "%s | Ganesh A",
+  },
   description:
-    "Ganesh is a Software Developer specializing in React, React Native, Laravel, Django, FastAPI, databases, DevOps and modern web development. Explore my projects, skills, education and contact information.",
+    "Ganesh A is a Full Stack Developer based in Dindigul, Tamil Nadu, building modern web applications, React and React Native apps, Python/Django/FastAPI APIs, Laravel systems, PostgreSQL applications, automation tools and production deployments.",
   alternates: {
     canonical: "https://www.ganeshdeveloper.in/",
   },
@@ -22,26 +25,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Ganesh | Software Developer Portfolio",
+    title: "Ganesh A | Full Stack Developer in Dindigul",
     description:
-      "Ganesh is a Software Developer specializing in React, React Native, Laravel, Django, FastAPI, databases, DevOps and modern web development. Explore my projects, skills, education and contact information.",
+      "Ganesh A is a Full Stack Developer based in Dindigul, Tamil Nadu, building modern web applications, React and React Native apps, Python/Django/FastAPI APIs, Laravel systems, PostgreSQL applications, automation tools and production deployments.",
     url: "https://www.ganeshdeveloper.in/",
-    siteName: "Ganesh Developer",
+    siteName: "Ganesh A | Full Stack Developer",
     locale: "en_IN",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Ganesh | Software Developer Portfolio",
+        alt: "Ganesh A | Full Stack Developer in Dindigul",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ganesh | Software Developer Portfolio",
+    title: "Ganesh A | Full Stack Developer in Dindigul",
     description:
-      "Ganesh is a Software Developer specializing in React, React Native, Laravel, Django, FastAPI, databases, DevOps and modern web development. Explore my projects, skills, education and contact information.",
+      "Ganesh A is a Full Stack Developer based in Dindigul, Tamil Nadu, building modern web applications, React and React Native apps, Python/Django/FastAPI APIs, Laravel systems, PostgreSQL applications, automation tools and production deployments.",
     images: ["/og.png"],
   },
   icons: {
@@ -58,22 +61,44 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://www.ganeshdeveloper.in/#website",
       "url": "https://www.ganeshdeveloper.in/",
-      "name": "Ganesh Developer",
+      "name": "Ganesh A | Full Stack Developer",
+      "alternateName": ["Ganesh Developer", "Ganesh A Developer"],
       "description":
-        "Ganesh is a Software Developer specializing in React, React Native, Laravel, Django, FastAPI, databases, DevOps and modern web development. Explore my projects, skills, education and contact information.",
-      "inLanguage": "en"
+        "Portfolio and engineering systems of Ganesh A, a Full Stack Developer based in Dindigul, Tamil Nadu.",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://www.ganeshdeveloper.in/#person"
+      },
+      "author": {
+        "@id": "https://www.ganeshdeveloper.in/#person"
+      }
     },
     {
       "@type": "Person",
       "@id": "https://www.ganeshdeveloper.in/#person",
-      "name": "Ganesh",
+      "name": "Ganesh A",
+      "alternateName": [
+        "Ganesh Developer",
+        "Ganesh A Developer"
+      ],
       "url": "https://www.ganeshdeveloper.in/",
       "image": "https://www.ganeshdeveloper.in/ganesh.jpg",
-      "jobTitle": "Software Developer",
+      "jobTitle": "Full Stack Developer",
+      "description":
+        "Full Stack Developer based in Dindigul, Tamil Nadu building web applications, mobile apps, backend APIs, automation tools and production-ready digital products.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dindigul",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
       "sameAs": [
-        "https://www.linkedin.com/in/ganesh-software-developer/"
+        "https://www.linkedin.com/in/ganesh-software-developer/",
+        "https://github.com/GANESHAATHI46",
+        "https://www.instagram.com/ganesh__official___"
       ],
       "knowsAbout": [
+        "Full Stack Development",
         "React",
         "React Native",
         "JavaScript",
@@ -94,29 +119,39 @@ const jsonLd = {
         "Docker",
         "Linux",
         "Nginx",
-        "Cloud Development",
-        "Web Development",
-        "Full Stack Development"
+        "Web Performance Optimization"
       ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dindigul",
-        "addressRegion": "Tamil Nadu",
-        "addressCountry": "IN"
-      },
       "alumniOf": [
         {
           "@type": "EducationalOrganization",
-          "name": "Sree Vee College"
+          "name": "Sree Vee College",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kiriyampatti",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          }
         },
         {
           "@type": "EducationalOrganization",
-          "name": "The Gandhigram Rural Institute"
+          "name": "The Gandhigram Rural Institute",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gandhigram",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          }
         }
       ],
       "worksFor": {
         "@type": "Organization",
-        "name": "Inpand Technologies"
+        "name": "Inpand Technologies",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dindigul",
+          "addressRegion": "Tamil Nadu",
+          "addressCountry": "IN"
+        }
       }
     }
   ]

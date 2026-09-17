@@ -31,36 +31,61 @@ export function ContactSection() {
 
   return (
     <section className="contact" id="contact" aria-label="Contact">
-      <div className="contact-stars" aria-hidden="true" />
+      <div className="contact-blueprint-grid" aria-hidden="true" />
       <div className="contact-content">
         <div className="contact-copy reveal">
-          <p className="eyebrow mono">NEXT MISSION</p>
+          <p className="eyebrow mono">ENGINEERING COLLABORATION // OPEN FOR ROLES</p>
           <h2>
             LET&apos;S BUILD
             <br />
             <span>WHAT&apos;S NEXT.</span>
           </h2>
           <p>
-            Open to software developer opportunities across full-stack web,
-            mobile and product engineering.
+            Open to Full Stack Developer opportunities across modern web,
+            mobile and scalable backend engineering.
           </p>
-          <div className="contact-links">
-            <a href={`mailto:${siteConfig.email}`}>
+          <div className="contact-links" aria-label="Find Ganesh Online and Contact Channels">
+            <a href={`mailto:${siteConfig.email}`} aria-label="Email Ganesh A">
               <span className="mono">EMAIL</span>
               {siteConfig.email}
             </a>
-            <a href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}>
+            <a href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`} aria-label="Call Ganesh A">
               <span className="mono">PHONE</span>
               {siteConfig.phone}
             </a>
-            <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
+            <a
+              href={siteConfig.linkedin}
+              target="_blank"
+              rel="me noopener noreferrer"
+              aria-label="LinkedIn profile of Ganesh A"
+            >
               <span className="mono">LINKEDIN</span>
-              ganesh-software-developer ↗
+              LinkedIn — Ganesh A ↗
+            </a>
+            <a
+              href={siteConfig.github}
+              target="_blank"
+              rel="me noopener noreferrer"
+              aria-label="GitHub profile of Ganesh A"
+            >
+              <span className="mono">GITHUB</span>
+              GitHub — Ganesh A ↗
+            </a>
+            <a
+              href={siteConfig.instagram}
+              target="_blank"
+              rel="me noopener noreferrer"
+              aria-label="Instagram profile of Ganesh A"
+            >
+              <span className="mono">INSTAGRAM</span>
+              Instagram — Ganesh A ↗
             </a>
             <a
               href={`mailto:${siteConfig.email}?subject=Resume%20request%20for%20Ganesh%20A`}
+              aria-label="Request resume for Ganesh A"
             >
-              <span className="mono">RESUME</span>Available on request →
+              <span className="mono">RESUME</span>
+              Available on request →
             </a>
           </div>
           <p className="contact-location mono">{siteConfig.location.toUpperCase()}</p>
