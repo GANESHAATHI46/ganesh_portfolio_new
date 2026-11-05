@@ -2,6 +2,7 @@
 
 import { type CSSProperties, useRef, useState } from "react";
 import type { Project } from "../types/portfolio";
+import { trackProjectClick } from "../lib/gtm";
 import { ArrowIcon } from "./icons/ArrowIcon";
 import { ProjectDialog } from "./ProjectDialog";
 
@@ -15,6 +16,10 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const openProject = (project: Project, trigger: HTMLButtonElement) => {
+    trackProjectClick(project.title, project.number, {
+      project_type: project.type,
+      project_status: project.status,
+    });
     projectTriggerRef.current = trigger;
     setSelectedProject(project);
     requestAnimationFrame(() => projectDialogRef.current?.showModal());
@@ -49,6 +54,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               className="project-row reveal"
               key={project.title}
               type="button"
+              data-gtm-handled="true"
               aria-haspopup="dialog"
               onClick={(event) => openProject(project, event.currentTarget)}
               style={{ "--delay": `${index * 80}ms` } as CSSProperties}

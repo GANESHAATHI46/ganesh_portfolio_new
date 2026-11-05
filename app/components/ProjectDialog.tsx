@@ -1,5 +1,6 @@
 import type { RefObject } from "react";
 import type { Project } from "../types/portfolio";
+import { trackContactButtonClick, trackProjectClick } from "../lib/gtm";
 import { ArrowIcon } from "./icons/ArrowIcon";
 
 interface ProjectDialogProps {
@@ -65,11 +66,31 @@ export function ProjectDialog({
           </div>
           <div className="dialog-actions">
             {project.link && (
-              <a href={project.link} target="_blank" rel="noreferrer">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                data-gtm-handled="true"
+                onClick={() => {
+                  trackProjectClick(project.title, project.number, {
+                    action: "visit_live_website",
+                    project_url: project.link,
+                  });
+                }}
+              >
                 Visit live website <ArrowIcon />
               </a>
             )}
-            <a href="#contact" onClick={onClose}>
+            <a
+              href="#contact"
+              data-gtm-handled="true"
+              onClick={() => {
+                trackContactButtonClick(
+                  project.link ? "discuss_project_work" : "request_project_details"
+                );
+                onClose();
+              }}
+            >
               {project.link ? "Discuss this work" : "Request project details"}{" "}
               <ArrowIcon />
             </a>

@@ -2,6 +2,7 @@
 
 import { type CSSProperties, type FormEvent, useState } from "react";
 import { siteConfig } from "../data/siteConfig";
+import { trackContactButtonClick, trackContactFormSubmit } from "../lib/gtm";
 import { ArrowIcon } from "./icons/ArrowIcon";
 
 export function ContactSection() {
@@ -24,6 +25,10 @@ export function ContactSection() {
     const body = encodeURIComponent(
       `Hi Ganesh,\n\n${message}\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\nOpportunity: ${role}`,
     );
+
+    // Track form submission without any personal or sensitive information
+    trackContactButtonClick("submit_opportunity_form");
+    trackContactFormSubmit(role);
 
     setFormStatus("Opening your email app…");
     window.location.href = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
@@ -158,7 +163,7 @@ export function ContactSection() {
             <input name="website" tabIndex={-1} autoComplete="off" />
           </label>
           <div className="form-footer">
-            <button type="submit">
+            <button type="submit" data-gtm-handled="true">
               Send opportunity <ArrowIcon />
             </button>
             <span className="mono" role="status" aria-live="polite">
